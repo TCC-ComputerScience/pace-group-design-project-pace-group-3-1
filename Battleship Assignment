@@ -11,6 +11,24 @@
 
 using namespace std;
 
+int boardRow;
+int boardcCol;
+char board[boardRow][boardCol];
+
+enum ocean {'~', '#', 'H', '.'} //characters used to represent whats in the ocean
+
+//pre:
+//post: generates board and ship locations
+void GenBoard();
+
+//pre: ship locations and board are generated.
+//post: determines if hit is a ship or a miss
+bool ShipGuess();
+
+//pre:
+//post: shows current condition of the board
+void BoardDisplay();
+
 int main()
 {
 
