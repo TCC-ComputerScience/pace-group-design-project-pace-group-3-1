@@ -1,3 +1,17 @@
-//Alexa Lounsbury, Krysta Parker, Jenny Barbieri, Chigozie Nzeadighibe    
+//PACE 3: Alexa Lounsbury, Krysta Parker, Jenny Barbieri, Chigozie Nzeadighibe    
 //4-10-22
 //Battleship Assignment
+
+//o-dimensional array as the basis for creating a one-player game of battleship.
+//(The computer generates the board and places the ships, and then the player has to guess the ship positions.)
+//In the game a '~' character represents ocean, a '#' character represents a part of a ship, 
+//an 'H' character represents a place where a part of a ship has been hit, and a  '.' character represents a  miss.
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+}
