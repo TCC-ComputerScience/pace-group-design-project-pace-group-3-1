@@ -15,6 +15,11 @@ int boardRow;
 int boardcCol;
 char board[boardRow][boardCol];
 
+const char water = '~';
+const char shipFloat = '#';
+const char shipSunk = 'H';
+const char miss = '.';
+
 enum ocean {'~', '#', 'H', '.'} //characters used to represent whats in the ocean
 
 //pre:
