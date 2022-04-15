@@ -14,12 +14,23 @@ using namespace std;
 int boardRow;
 int boardcCol;
 char board[boardRow][boardCol];
+int ships[]; //Array of ships
 
 enum ocean {'~', '#', 'H', '.'} //characters used to represent whats in the ocean
+enum shipType{carrier, battleship, cruiser, submarine, destroyer}; //type os ship
+
+struct ship
+{
+  shipType type; //type of ship
+  int size; //size of ship
+  bool sunk; // ship sunk=true or false
+  int location[][];
+}
 
 //pre:
 //post: generates board and ship locations
 void GenBoard();
+
 
 //pre: ship locations and board are generated.
 //post: determines if hit is a ship or a miss
@@ -31,5 +42,35 @@ void BoardDisplay();
 
 int main()
 {
-
+  //createBoard();
+  //setupBoard();
+  //playGame();
 }
+
+void GenBoard()
+{
+  //ask user for shiptype
+  //ask position of ship on board(x,y)
+  //ask orientation of ship on board(verical, horizontal)
+}
+
+void attack()
+{
+  //ask guess coordinate(x,y)
+  //evaluate if it was a hit or miss and update accordingly
+  //update board
+}
+
+void playGame()
+{
+  //check player's turn
+  //call attack function
+  //call checkWinner function
+}
+
+void checkWinner()
+{
+  //loop ships
+  //check sunk status to determine winner
+}
+
