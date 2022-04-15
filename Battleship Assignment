@@ -16,6 +16,11 @@ int boardcCol;
 char board[boardRow][boardCol];
 int ships[]; //Array of ships
 
+const char water = '~';
+const char shipFloat = '#';
+const char shipSunk = 'H';
+const char miss = '.';
+
 enum ocean {'~', '#', 'H', '.'} //characters used to represent whats in the ocean
 enum shipType{carrier, battleship, cruiser, submarine, destroyer}; //type os ship
 
