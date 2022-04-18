@@ -7,6 +7,9 @@
 //In the game a '~' character represents ocean, a '#' character represents a part of a ship, 
 //an 'H' character represents a place where a part of a ship has been hit, and a  '.' character represents a  miss.
 
+//might use later
+//enum ocean {'~', '#', 'H', '.'} //characters used to represent whats in the ocean
+
 #include <iostream>
 
 using namespace std;
@@ -21,7 +24,6 @@ const char shipFloat = '#';
 const char shipSunk = 'H';
 const char miss = '.';
 
-//enum ocean {'~', '#', 'H', '.'} //characters used to represent whats in the ocean
 enum shipType{carrier, battleship, cruiser, submarine, destroyer}; //type os ship
 
 struct ship
@@ -44,6 +46,18 @@ bool ShipGuess();
 //pre:
 //post: shows current condition of the board
 void BoardDisplay();
+
+//pre:check status of ships
+//post:determine winner
+void checkWinner();
+
+//pre:
+//post: player choose coorinates to fire
+void playGame();
+
+//pre:
+//post: 
+void attack();
 
 int main()
 {
@@ -68,7 +82,6 @@ void attack()
 
 void playGame()
 {
-  //check player's turn
   //call attack function
   //call checkWinner function
 }
@@ -78,4 +91,3 @@ void checkWinner()
   //loop ships
   //check sunk status to determine winner
 }
-
