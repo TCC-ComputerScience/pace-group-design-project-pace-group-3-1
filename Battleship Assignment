@@ -7,16 +7,15 @@
 //In the game a '~' character represents ocean, a '#' character represents a part of a ship, 
 //an 'H' character represents a place where a part of a ship has been hit, and a  '.' character represents a  miss.
 
-//might use later
-//enum ocean {'~', '#', 'H', '.'} //characters used to represent whats in the ocean
-
 #include <iostream>
+#include <ctime>
+#include <string>
 
 using namespace std;
 
 int boardRow;
 int boardcCol;
-char board[boardRow][boardCol];
+char board[10][10];
 int ships[]; //Array of ships
 
 const char water = '~';
@@ -38,7 +37,6 @@ struct ship
 //post: generates board and ship locations
 void GenBoard();
 
-
 //pre: ship locations and board are generated.
 //post: determines if hit is a ship or a miss
 bool ShipGuess();
@@ -53,17 +51,31 @@ void checkWinner();
 
 //pre:
 //post: player choose coorinates to fire
-void playGame();
+void attack(int x, int y);
 
-//pre:
-//post: 
-void attack();
 
 int main()
 {
-  //createBoard();
-  //setupBoard();
-  //playGame();
+   int x, y;
+   srand((unsigned int)time(NULL));
+   GenBoard();     //creates board
+
+   do {
+       do {
+           cout << "Enter a number 1-10 to select a column:";
+           cin >> x;
+       } while (!(x > 0 && x <= 10));
+       do {
+           cout << "Enter a number 1-10 to select a row:";
+           cin >> y;
+       } while (!(y > 0 && y <= 10));
+       attack(x - 1, y - 1);
+       BoardDisplay();  //display board after turn
+
+   } while (!checkWinner()); //check if all ships are hit
+   
+   cout << "All the ships have been destroyed!" << endl;  //when all ships have been hit print message
+   return 0;
 }
 
 void GenBoard()
@@ -80,11 +92,6 @@ void attack()
   //update board
 }
 
-void playGame()
-{
-  //call attack function
-  //call checkWinner function
-}
 
 void checkWinner()
 {
